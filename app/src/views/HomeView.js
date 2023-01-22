@@ -15,4 +15,3 @@ const HomeView = () => {
 }
 
 export default Page(HomeView);
-// export default HomeView;
