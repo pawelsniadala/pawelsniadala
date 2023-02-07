@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "https://pawelsniadala.pl/static/css/main.31d6cfe0.css",
+    "main.js": "https://pawelsniadala.pl/static/js/main.b977626a.js",
+    "static/js/787.c1112931.chunk.js": "https://pawelsniadala.pl/static/js/787.c1112931.chunk.js",
+    "index.html": "https://pawelsniadala.pl/index.html",
+    "main.b977626a.js.map": "https://pawelsniadala.pl/static/js/main.b977626a.js.map",
+    "787.c1112931.chunk.js.map": "https://pawelsniadala.pl/static/js/787.c1112931.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.b977626a.js"
+  ]
+}
