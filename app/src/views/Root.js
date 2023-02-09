@@ -5,9 +5,10 @@ import {
 } from 'react-router-dom';
 import MainTemplate from '../templates/MainTemplate';
 // import ScrollArrow from '../components/ScrollArrow';
-// import HeaderSection from '../sections/HeaderSection';
+import HeaderSection from '../sections/HeaderSection';
 // import FooterSection from '../sections/FooterSection';
 import HomeView from './HomeView';
+import PhotosView from './PhotosView';
 // import ContactView from './ContactView';
 // import Modal from '../components/Modal';
 // import Toast from '../components/Toast';
@@ -15,11 +16,13 @@ import HomeView from './HomeView';
 const Root = () => (
     <MainTemplate>
         <Router>
-            {/* <HeaderSection /> */}
+            <HeaderSection />
             <main>
                 <Routes>
                     <Route exact path='/' element={<HomeView main />} />
                     <Route exact path='/pawelsniadala/' element={<HomeView main />} />
+                    <Route path='/prices' element={<PhotosView title='Cennik' />}>
+                    </Route>
                 </Routes>
             </main>
             {/* <Modal />

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
 // import 'photoswipe/dist/photoswipe.css';
 // import 'photoswipe/dist/default-skin/default-skin.css';
 import '../styles/app.scss';
@@ -12,6 +12,9 @@ import '../styles/app.scss';
 // import 'react-image-lightbox/style.css';
 // import 'aos/dist/aos.css';
 // import AOS from 'aos';
+
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 
 const MainTemplate = ({ children }) => {
     // useEffect(() => {
@@ -24,10 +27,32 @@ const MainTemplate = ({ children }) => {
     //     });
     // }, []);
 
+    const theme = createTheme({
+        status: {
+            danger: '#e53e3e',
+        },
+        palette: {
+            // primary: {
+            //     main: '#0971f1',
+            //     darker: '#053e85',
+            // },
+            secondary: {
+                main: '#fff',
+                darker: '#fff',
+            },
+            // neutral: {
+            //     main: '#64748B',
+            //     contrastText: '#fff',
+            // },
+        },
+    });
+
     return (
-        <div className='app'>
-            {children}
-        </div>
+        <Box className='app'>
+            <ThemeProvider theme={theme}>
+                {children}
+            </ThemeProvider>
+        </Box>
     );
 }
 

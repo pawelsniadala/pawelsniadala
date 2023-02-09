@@ -1,4 +1,5 @@
 import Page from '../components/Page';
+import PhotosSection from '../sections/PhotosSection';
 // import HeroSection from '../sections/HeroSection';
 // import ClinicSection from '../sections/ClinicSection';
 // import ServicesSection from '../sections/ServicesSection';
@@ -9,7 +10,7 @@ import Page from '../components/Page';
 const HomeView = () => {
     return (
         <div className='home-view'>
-            <div>Strona w budowie</div>
+            <PhotosSection />
         </div>
     );
 }
