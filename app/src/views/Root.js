@@ -21,7 +21,7 @@ const Root = () => (
                 <Routes>
                     <Route exact path='/' element={<HomeView main />} />
                     <Route exact path='/pawelsniadala/' element={<HomeView main />} />
-                    <Route path='/prices' element={<PhotosView title='Cennik' />}>
+                    <Route path='/photos' element={<PhotosView title='Zdjęcia' />}>
                     </Route>
                 </Routes>
             </main>

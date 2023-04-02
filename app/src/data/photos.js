@@ -1,3 +1,6 @@
+import photos0Original from '../assets/photos/photos0Original.jpg';
+import photos01Original from '../assets/photos/photos01Original.jpg';
+
 import photos1Thumbnail from '../assets/photos/photos1Thumbnail.jpg';
 import photos1Original from '../assets/photos/photos1Original.jpg';
 import photos2Thumbnail from '../assets/photos/photos2Thumbnail.jpg';
@@ -18,6 +21,16 @@ import photos9Thumbnail from '../assets/photos/photos9Thumbnail.jpg';
 import photos9Original from '../assets/photos/photos9Original.jpg';
 
 export const photos = {
+    view: [
+        {
+            designation: 'photos1',
+            // srcThumbnail: photos1Thumbnail,
+            srcOriginal: photos0Original,
+            srcOriginal2: photos01Original,
+            title: "title",
+
+        }
+    ],
     section: [
         {
             designation: 'photos1',
@@ -91,14 +104,14 @@ export const photos = {
             cols: 2,
             order: 4
         },
-        {
-            designation: 'photos9',
-            srcThumbnail: photos9Thumbnail,
-            srcOriginal: photos9Original,
-            author: "Karol Dądera",
-            rows: 1,
-            cols: 2,
-            order: 1
-        },
+        // {
+        //     designation: 'photos9',
+        //     srcThumbnail: photos9Thumbnail,
+        //     srcOriginal: photos9Original,
+        //     author: "Karol Dądera",
+        //     rows: 1,
+        //     cols: 2,
+        //     order: 1
+        // },
     ]
 };

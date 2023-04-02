@@ -1,12 +1,25 @@
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 // import Breadcrumbs from '@mui/material/Breadcrumbs';
 import Box from '@mui/material/Box';
+
+
+import Card from '@mui/material/Card';
+// import CardContent from '@mui/material/CardContent';
+// import Breadcrumbs from '@mui/material/Breadcrumbs';
+// import Typography from '@mui/material/Typography';
+// import Box from '@mui/material/Box';
+// import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+
+
+
+
 import Container from '../components/Container';
 // import List from '@mui/material/List';
 // import ListItem from '@mui/material/ListItem';
@@ -18,6 +31,7 @@ import Container from '../components/Container';
 // import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 import Page from '../components/Page';
+import PhotosAllPartial from './partials/photos/PhotosAllPartial';
 // import PricesDermatologyPartials from './partials/prices/PricesDermatologyPartials';
 // import PricesAestheticMedicinePartials from './partials/prices/PricesAestheticMedicinePartials';
 // import PricesCosmetologyPartials from './partials/prices/PricesCosmetologyPartials';
@@ -32,6 +46,10 @@ import Page from '../components/Page';
 // import PricesClinicalDietitianPartials from './partials/prices/PricesClinicalDietitianPartials';
 // import PricesRheumatologyPartial from './partials/prices/PricesRheumatologyPartial';
 
+
+
+import { photos } from '../data/photos';
+
 const PhotosView = () => {
     const location = useLocation();
 
@@ -40,9 +58,9 @@ const PhotosView = () => {
 
         const selectTab = (pathname) => {
             switch(pathname) {
-                case '/prices':
+                case '/photos':
                     return (
-                        'prices-dermatology'
+                        'photos-all'
                     );
                 case '/prices/aesthetic-medicine':
                     return (
@@ -101,10 +119,11 @@ const PhotosView = () => {
 
     const renderTabContent = (photoTab) => {
         switch(photoTab) {
-            case 'prices-dermatology':
+            case 'photos-all':
                 return (
                     // <PricesDermatologyPartials />
-                    <div></div>
+                    <PhotosAllPartial />
+                    // <div></div>
                 );
             case 'prices-aesthetic-medicine':
                 return (
@@ -207,7 +226,53 @@ const PhotosView = () => {
     return (
         <Box className='contact-view'>
             <Box className='view-wrapper'>
-                <Box className='view-header prices' sx={{ backgroundColor: '#f6f8fa' }}>
+                <Box
+                    className='view-header prices'
+                    // sx={{ backgroundColor: '#f6f8fa' }}
+                >
+
+                {photos.view.map((item, index) => (
+                    <Box className='card-introduction'>
+                        {item.srcOriginal ? (
+                            <Box
+                                className='card-background'
+                                component={LazyLoadImage}
+                                height={1}
+                                width={1}
+                                src={item.srcOriginal}
+                                alt={item.title}
+                                effect='blur'
+                            />
+                        ) : (
+                            <Box className='card-background-color' />
+                        )}
+                        <Container>
+                            <Box
+                                className='card-image'
+                                component={LazyLoadImage}
+                                src={item.srcOriginal2}
+                                alt={item.title}
+                                effect='blur'
+                            />
+                        </Container>
+
+                        {/* <CardContent className='card-content'>
+                            <Typography className='card-name'>
+                                {item.name}
+                            </Typography>
+                            <Typography className='card-speciality'>
+                                {item.speciality}
+                            </Typography>
+                            {item.summary && (
+                                <Typography className='card-text'>
+                                    {item.summary}
+                                </Typography>
+                            )}
+                        </CardContent> */}
+                    </Box>
+                ))}
+
+
                     <Box className='header-wrapper'>
                         {/* <Box className='nav-wrapper'>
                             <Breadcrumbs
@@ -242,9 +307,9 @@ const PhotosView = () => {
 
                             <Box className='prices-navigation' sx={{ borderBottom: 1, borderColor: 'divider' }}>
                                 <Container className=''>
-                                <Typography variant='h4' className='heading-view' sx={{ marginBottom: '25px', paddingTop: '25px' }}>
-                                    Galeria
-                                </Typography>
+                                    {/* <Typography variant='h4' className='heading-view' sx={{ marginBottom: '25px', paddingTop: '25px' }}>
+                                        Galeria
+                                    </Typography> */}
                                     <Tabs
                                         value={location.pathname}
                                         variant='scrollable'
@@ -258,12 +323,12 @@ const PhotosView = () => {
                                         }}
                                     >
                                         <Tab
-                                            label='Zielona Rzeczywistość'
+                                            label='Wszystkie'
                                             component={Link}
-                                            to={`/prices`}
-                                            value={`/prices`}
-                                            selected={pricesTab === 'prices-clinical-dietitian'}
-                                            onClick={() => setTab('prices-dermatology')}
+                                            to={`/photos`}
+                                            value={`/photos`}
+                                            // selected={pricesTab === 'prices-clinical-dietitian'}
+                                            onClick={() => setTab('photos-all')}
                                         />
                                         <Tab
                                             label='Medycyna estetyczna'
@@ -313,6 +378,9 @@ const PhotosView = () => {
                         </Box>
                     </Box>
                 </Box>
+
+
+
                 <Box className='view-body'>
                     <Box className='body-wrapper prices'>
 

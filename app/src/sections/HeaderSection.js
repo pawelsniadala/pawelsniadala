@@ -15,7 +15,11 @@ import ListItemText from '@mui/material/ListItemText';
 // import PetsIcon from '@mui/icons-material/Pets';
 // import LogoDevIcon from '@mui/icons-material/LogoDev';
 // import TerminalIcon from '@mui/icons-material/Terminal';
+
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 import Container from '../components/Container';
 // import PhoneSvg from '../assets/svg/PhoneSvg';
@@ -315,12 +319,12 @@ const HeaderSection = () => {
                         {width <= 991.98 ? (
                             // <img alt='Dermatologia i Medycyna estetyczna dr Nina Wiśniewska' height='51' src={require('../assets/header/logo.png')} />
                             // <ThemeProvider theme={theme}>
-                                <GitHubIcon fontSize="large" color="secondary" />
+                                <FingerprintIcon fontSize="large" color="secondary" />
                             // </ThemeProvider>
                         ) : (
                             // <img alt='Dermatologia i Medycyna estetyczna dr Nina Wiśniewska' height='60' src={require('../assets/header/logo.png')} />
                             // <ThemeProvider theme={theme}>
-                                <GitHubIcon fontSize="large" color="secondary" />
+                                <FingerprintIcon fontSize="large" color="secondary" />
                             // </ThemeProvider>
                         )}
                         {/* <Typography className='brand-text'>
@@ -378,9 +382,9 @@ const HeaderSection = () => {
                                         className='nav-link'
                                         activeclassname='active'
                                         aria-current='page'
-                                        to='/prices'
+                                        to='/photos'
                                     >
-                                        Cennik
+                                        Zdjęcia
                                     </NavLink>
                                 </li>
                                 <li className='nav-item'>
@@ -423,7 +427,36 @@ const HeaderSection = () => {
                                         Kontakt
                                     </NavLink>
                                 </li>
+                                <li className='nav-item'>
+                                    <TwitterIcon fontSize="small" color="secondary" />
+                                </li>
+                                <li className='nav-item'>
+                                    <GitHubIcon fontSize="small" color="secondary" />
+                                </li>
+                                <li className='nav-item'>
+                                    <MoreVertIcon fontSize="small" color="secondary" />
+                                </li>
                             </ul>
+                            
+
+
+
+
+
+
+
+
+                            {/* <ul className='navbar-nav'>
+                                <li className='nav-item'>
+                                    <TwitterIcon fontSize="small" color="secondary" />
+                                </li>
+                                <li className='nav-item'>
+                                    <GitHubIcon fontSize="small" color="secondary" />
+                                </li>
+                                <li className='nav-item'>
+                                    <MoreVertIcon fontSize="small" color="secondary" />
+                                </li>
+                            </ul> */}
                         </Box>
                     </Box>
                 </Container>
